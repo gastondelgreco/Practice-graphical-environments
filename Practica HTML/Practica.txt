@@ -1,0 +1,43 @@
+Ejercicios
+
+Ejercitación 1 - Responder el siguiente cuestionario
+
+1. Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
+
+Sigla en inglés de HyperText Markup Language.
+Es un lenguaje de marcado para la elaboración de páginas web.
+Es un estándar que sirve de referencia del software que conecta con la elaboración de páginas web en sus diferentes versiones.
+Define una estructura básica y un código (denominado código HTML) para la definición de contenido de una página web, como texto, imáge nes, videos, juegos, entre otros.
+
+Fue creado en 1990.
+
+Pasó por HTML 1.0, HTML 2.0, HTML 3, HTML 3.2, HTML 4.01, XHTML 1.0 y la ultima es HTML 5.0.
+
+2. ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos con HTML?
+
+Que las tecnologías deben ser compatibles con versiones anteriores, que las especificaciones y las implementaciones deben coincidir incluso si esto significa cambiar la especificación en lugar de las implementaciones, y que las especificaciones deben ser lo suficientemente detalladas como para que las implementaciones interoperabilidad completa sin ingeniería inversa entre sí.
+
+3. En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y obsoleto?
+
+Un elemento o atributo es marcado como desaprobado cuando su uso ya no es recomendado, porque existen alternativas más modernas, eficientes o semánticamente correctas.´
+Un elemento o atributo se considera obsoleto cuando ha sido eliminado completamente de la especificación y ya no debe ser utilizado.
+
+4. Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+
+Es un conjunto de reglas que define la estructura y los elementos permitidos en un documento HTML o XML. En el contexto de HTML, el DTD especifica qué elementos y atributos son válidos, cómo deben estructurarse, y qué relaciones pueden tener entre ellos.
+
+HTMLL 4.01 contempla:
+DTD Estricto (Strict DTD).
+DTD de Transición (Transitional DTD).
+DTD de Marcos (Frameset DTD).
+
+5. Qué son los metadatos y cómo se especifican en HTML?
+
+Los metadatos son datos que describen otros datos. En el contexto de HTML, los metadatos proporcionan información adicional sobre el documento web, como el autor, la descripción, las palabras clave, y la configuración relacionada con el contenido y el comportamiento del documento.
+En HTML, los metadatos se especifican principalmente dentro de la sección <head> del documento. Hay varias maneras de incluir metadatos, utilizando etiquetas como <meta>, <title>, <link>, y <style>.
+
+---------------------------------------------------------------------------------
+
+Ejercitación 2
+Analizar los siguientes segmentos de código indicando en qué sección del documento HTML se colocan, cuál es el efecto que producen y señalar cada uno de los elementos, etiquetas, y atributos (nombre y valor), aclarando si es obligatorio.
+
