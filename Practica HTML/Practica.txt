@@ -51,9 +51,11 @@ Analizar los siguientes segmentos de código indicando en qué sección del docu
 2.a)
 <!-- Código controlado el día 12/08/2009 →
 
-Se pueden colocar en cualquier lado del documento, es la forma de comentar algo en HTML.
-Etiqueta: '<!-- -->'.
-No es obligatorio.
+Se pueden colocar en cualquier lado del documento.
+Es la forma de comentar algo en HTML.
+
+Etiqueta: 
+'<!-- -->'. No es obligatorio.
 
 
 2.b)
@@ -61,27 +63,109 @@ No es obligatorio.
 
 Pertenece al '<body>' del documento.
 Se usa para definir una seccion del documento, el id hace identificativo este 'div'.
-Etiqueta: '<div> <div>'
-Atributo: 'id'
+
+Etiqueta: 
+'<div> <div>'. No es obligatorio.
+
+Atributo: 
+'id'. Identificador. No es obligatorio.
 
 
 2.c)
 <img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32"
 longdesc="detalles.htm" />
 
+Petenece al '<body>' del documento.
+Se usa para mostrar una imagen.
 
+Etiqueta: 
+'<img>'. No es obligatorio.
+
+Atributos: 
+'src'. Especifica URL. Si es obligatorio.
+'alt'. Texto alternativo. No es obligatorio, pero siempre deberia estar.
+'id'. Identificador. No es obligatorio.
+'name'. Nombre del elemento. No es olbigatorio.
+'width'. Ancho de la imagen. No es obligatorio.
+'height'. Altura de la imagen. No es obligatorio.
+'longdesc'. URL de una descripcion larga de la imagen. No es olbigatorio.
 
 
 2.d)
 <meta name="keywords" lang="es" content="casa, compra, venta, alquiler " />
 <meta http-equiv="expires" content="16-Sep-2019 7:49 PM" />
 
+Pertenece al '<head>' del documento.
+Proporciona metadatos sobre el documento.
 
+Etiqueta:
+'<meta>'. No es obligatorio.
+
+Atributos:
+'name'. Define propocito del metadato. No es obligatorio.
+'lang'. Define idioma del contenido. No es obligatorio.
+'Content'. ESpecifica el valor de los metadatos. Si es obligatorio.
+'http-equiv'. Transforma el '<meta>' en un equivalente de un encabezado HTTP. No es obligatorio.
 
 
 2.e)
 <a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8"
 rel="help">Resumen HTML </a>
 
+Pertenece al '<body>' del documento.
+Crea un enlace a otra pagina que es de tipo HTML. (hipervinculo).
+
+Etiqueta: '<a>'.
+No es obligatorio.
+
+Atributos:
+'href'. URL del recurso al que se vincula. Si es obligatorio.
+'type'. Tipo del recursa al que apunta. No es obligatorio.
+'hreflang'. Idioma del recurso vinculado.
+'charset'. Codificacion de caracteres del recurso vinculado. No es obligatorio.
+'rel'. Relacion entre el documento actual y el vinculado. No es obligatorio.
 
 
+2.f)
+<table width="200" summary="Datos correspondientes al ejercicio vencido">
+    <caption align="top"> Título </caption>
+    <tr>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">A</th>
+        <th scope="col">B</th>
+        <th scope="col">C</th>
+    </tr>
+    <tr>
+        <th scope="row">1º</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <th scope="row">2º</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+Pertenece al '<body>' del documento.
+Crea una tabla personalizada.
+
+Etiqueta:
+'<table>'. No es obligatorio.
+'<caption>'. Titulo para la tabla. No es obligatorio.
+'<tr>'. Define una fila en la tabla. No es obligatorio.
+'<th>'. Define celda de encabezado. No es obligatorio.
+'<td>'. Define una celda de datos. No es obligatorio.
+
+Atributos:
+'width'. Ancho de tabla. No es obligatorio.
+'summary'. Descripcion de la tabla. No es obligatorio.
+'align'. Alineacion del texto dentro de '<caption>'. No es obligatorio.
+'scope'. Especifica si la celda de encabezado se aplica a una columna o fila. No es obligatorio.
+
+'&nbsp'. Representa un espacio en blanco. No es obligatorio.
+
+
+Ejercitacion 3
