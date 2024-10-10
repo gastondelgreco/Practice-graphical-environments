@@ -1,0 +1,261 @@
+Ejercicio 1: Responder
+
+1. ¿ Qué es CSS y para qué se usa?
+
+CSS son las siglas de Cascade Style Sheet que traducido significa hojas de estilo en cascada. Las hojas de estilo es una tecnología que nos permite controlar la apariencia de una página web.
+
+
+2. CSS utiliza reglas para las declaraciones de estilo, ¿cómo funcionan?
+
+CSS funciona a base de reglas, es decir, declaraciones sobre el estilo de uno o más elementos. Las hojas de estilo están compuestas por una o más de esas reglas aplicadas a un documento HTML o XML. La regla tiene dos partes: un selector y la declaración. A su vez la declaración está compuesta por una propiedad y el valor que se le asigne. 
+
+Ejemplo:
+h1 {color: red;}
+h1 es el selector
+{color: red;}
+es la declaración
+
+El selector funciona como enlace entre el documento y el estilo, especificando los elementos que se van a ver afectados por esa declaración.
+La declaración es la parte de la regla que establece cuál será el efecto. 
+
+En el ejemplo anterior, el selector h1 indica que todos los elementos h1 se verán afectados por la declaración donde se establece que la propiedad color va a tener el valor red (rojo) para todos los elementos h1 del documento o documentos que estén vinculados a esa hoja de estilos.
+
+
+3. ¿ Cuáles son las tres formas de dar estilo a un documento?
+
+. Utilizando una hoja de estiloe externa que esta vinculada a un documento a traves del elemento <link>, el cual debe ir situado en la seccion <head>.
+. Utilizando el elemento <style>, en el interior del documento al que se le quiere dar estilo, y que generalmente se situaria en la seccion <head>. De esta forma los estilos seran reconocidos antes de que la pagina se cargue por completo.
+. Utilizando estilos directamente sobre aquellos elementos que lo permiten a atraves del atributo <style> dentro de <body>. Pero este tipo de estilo al mezclarse el contenido con la presentacion.
+
+4. ¿ Cuáles son los distintos tipos de selectores más utilizados?
+
+El h1, h2, h3, p, 
+
+Ejemplifique cada uno.
+h1 {
+    padding-left: 11em;
+    font-family: Georgia, "Times New Roman",Times, serif;
+    color: red;
+    background-color: #d8da3d; 
+}
+h2 {color: red;}
+h3 {color: red;}
+p {color: red;}
+
+Un error bastante habitual es escribir los caracteres < y > en la hoja de estilo.
+
+
+5. ¿ Qué es una pseudo-clase? Cuáles son las más utilizadas aplicadas a vínculos?
+
+Son una palabra precedida por dos puntos (:).
+
+:link se aplica a los vínculos que aún no han sido visitados.
+:visited se aplica una vez que el vínculo ha sido visitado por el usuario.
+:hover se aplica a vínculos cuando el cursor pasa sobre ellos.
+
+
+6. ¿ Qué es la herencia?
+
+La herencia en CSS es un mecanismo por el cual ciertos estilos aplicados a un elemento "padre" se transmiten automáticamente a sus elementos "hijos" o descendientes. No todos los estilos son heredados, pero los que sí lo son pueden simplificar bastante la tarea de aplicar estilos consistentes en un sitio web.
+
+
+7. ¿ En qué consiste el proceso denominado cascada?
+
+La cascada de CSS asigna una fuerza a cada regla de estilo. Cuando varias reglas se aplican, la de mayor fuerza toma preponderancia. 
+De forma predefinida, las reglas en las hojas de estilo del autor tienen más fuerza que las reglas en las hojas de estilo del usuario. Con las reglas “!important”, esto se revierte. Todas las reglas que el usuario y autor especifican tienen mayor fuerza que las reglas de la hoja de estilo predeterminada en la aplicación de usuario.
+Las hojas de estilo importadas también forman la cascada y su fuerza depende del orden en la importación. Las reglas especificadas en una hoja de estilo dada sustituyen las reglas importadas desde otras hojas de estilo. Las hojas de estilo importadas pueden a su vez importar y sustituir otras hojas de estilo, recursivamente, y se aplican las mismas reglas de preponderancia.
+
+
+Ejercicio 2
+
+Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.
+
+p#normal {
+    font-family: arial,helvetica;
+    font-size: 11px;
+    font-weight: bold;
+}
+Dirigido a <p>, de id #normal.
+font-family: arial,helvetica; | Define la familia de fuentes que se van a aplicar, como primera opción está arial, sino utilizará helvetica en su defecto.
+font-size: 11px; | Define el tamaño de la fuente en 11 pixeles.
+font-weight: bold; | Hace negrita la fuente.
+
+*#destacado {
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+}
+Dirigido a todos los elementos, de id #destacado.
+border-style: solid; | Define el estilo del borde como solido.
+border-color: blue; | Define el color del borde en azul.
+border-width: 2px; | Define el ancho del borde en 2 pixeles.
+
+#distinto {
+    background-color: #9EC7EB;
+    color: red;
+}
+Dirigida por default a cualquier elemento que tenga id #distinto.
+background-color: #9EC7EB; | Define el color de fondo.
+color: red; |   Define el color de texto rojo.
+
+<p id="normal">Este es un párrafo</p>
+<p id="destacado">Este es otro párrafo</p>
+<table id="destacado"><tr><td>Esta es una tabla</td></tr></table>
+<p id="distinto">Este es el último párrafo</p>
+
+
+Ejercicio 3
+
+Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.
+
+p.quitar {
+    color: red;
+}
+Dirigida a <p>, con la clase .quitar.
+color: red; Define el texto en color rojo.
+
+
+*.desarrollo {
+    font-size: 8px;
+}
+Dirigido a cualquier elemento con clase .desarrollo.
+font-size: 8px; Define el tamaño de la fuente en 8 pixeles.
+
+.importante {
+    font-size: 20px;
+}
+Dirigido a cualquier elemento con clase .importante.
+font-size: 20px; Define el tamaño de la fuente en 20 pixeles.
+
+<p class="desarrollo">
+En este primer párrafo trataremos lo siguiente:
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</p>
+<p class="quitar">
+Este párrafo debe ser quitado de la obra…
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</p>
+<p >
+En este otro párrafo trataremos otro tema:<br />
+xxxxxxxxxxxxxxxxxxxxxxxxx
+</p>
+<p class="importante">
+Y este es el párrafo más importante de la obra…
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</ p>
+<h1 class="quitar">Este encabezado también debe ser quitado de la obra</h1>
+<p class="quitar importante">Se pueden aplicar varias clases a la vez</p>
+
+
+Ejercicio 4
+
+Dadas las siguientes declaraciones:
+
+* {
+    color:green;
+}
+a:link {
+    color:gray
+}
+a:visited{
+    color:blue 
+}
+a:hover {
+    color:fuchsia 
+}
+a:active {
+    color:red
+}
+p {
+    font-family: arial,helvetica;font-size: 10px;color:black; 
+}
+.contenido{
+    font-size: 14px;font-weight: bold;
+}
+
+Analizar los siguientes códigos y comparar sus efectos. Explicar:
+
+<body>
+    <p class="contenido" style="font-weight: normal;">
+    Este es un texto ...............</p>
+    <table>
+        <tr>
+            <td>Y esta es una tabla.......</td>
+        </tr>
+            <tr>
+            <td><a href="http://www.google.com.ar">con un enlace</a></td>
+        </tr>
+    </table>
+</body>
+"Este es un texto ..............." Sale con la fuente cambiada, con un tamaño mas grande, en negrita aunque se sobreescribe en normal y en color negro.
+"Y esta es una tabla......." Esto sale en verde.
+"con un enlace" Sale en gris, cuando dejas el cursor encima, sale en fucsia, si visitas el link, queda en azul y cuando le das click en rojo.
+
+<body class="contenido">
+    <p> Este es un texto................</p>
+    <table>
+        <tr>
+            <td>Y esta es una tabla.......</td>
+        </tr>
+        <tr>
+            <td><a href="http://www.google.com.ar">con un enlace</a></td>
+        </tr>
+    </table>
+</body>
+Es lo mismo, pero todo en negrita, ya que no se sobreescribe.
+
+
+Ejercicio 5
+
+En cada caso, declarar una regla CSS que produzca el siguiente efecto:
+
+1. Los textos enfatizados dentro de cualquier título deben ser rojos.
+
+h1 {
+    color: red;
+}
+
+2. Cualquier elemento que tenga asignado el atributo "href" y que esté dentro de cualquier párrafo que a su vez esté dentro de un bloque debe ser color negro.
+
+div p a[href] {
+    color: black;
+}
+Selecciona cualquier enlace (a) que tenga el atributo href, que esté dentro de un párrafo (<p>), y que, a su vez, esté dentro de un bloque <div>.
+
+3. El texto de las listas no ordenadas que estén dentro del bloque identificado como “ultimo” debe ser amarillo pero si es un enlace a otra página debe ser azul.
+
+div#ultimo ul {
+    color: yellow;
+}
+
+div#ultimo ul a[href] {
+    color: blue;
+}
+
+4. Los elementos identificados como “importante” dentro de cualquier bloque deben ser verdes, pero si están dentro de un título deben ser rojos.
+
+div#importante {
+    color: green;
+}
+
+div#importante h1{
+    color: red;
+}
+
+5. Todos los elementos h1 que especifique el atributo title, cualquiera que sea su valor, deben ser azules.
+
+h1[title]{
+    color: blue;
+}
+
+6. El color de los enlaces en las listas ordenadas debe ser azul para los enlaces aún no visitados, y violeta para los ya visitados y, además, no deben aparecer subrayados.
+
+ol a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+ol a:visited {
+    color: violet;
+    text-decoration: none;
+}
