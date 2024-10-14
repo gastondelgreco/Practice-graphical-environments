@@ -1,0 +1,602 @@
+Practica HTML
+
+
+1. Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
+
+El HTML es un lenguaje de marcado, un lenguaje de marcado hace referencia a aquellos lenguajes que emplean etiquetas. Estas etiquetas ya estan predefinidas dentro del lenguaje
+respectivo y contienen informacion que "ayudan" a leer el texto. Es decir, tanto para los desarrolladores como para las plataformas que pueden leer este leguaje, las etiquetas 
+contienen información adicional de la estructura del texto. Su principal diferencia con los lenguajes de programación es que éstos últimos poseen funciones aritméticas o variables,
+mientras que los lenguajes de marcado no.
+Permite:
+* Publicar documentos en línea con encabezados, textos, tablas, listas, fotos, etc.
+* Obtener información en línea a través de vínculos de hipertexto, haciendo clic con el botón de un ratón.
+* Diseñar formularios para realizar transacciones con servicios remotos, para buscar información, hacer reservas, pedir productos, etc.
+* Incluir hojas de cálculo, videoclips, sonidos, y otras aplicaciones directamente en sus documentos.
+    Fue originalmente desarrollado por Tim Berners-Lee mientras estaba en el CERN, y fue popularizado por el navegador Mosaic desarrollado en el NCSA. Con el paso del tiempo, el HTML se desarrolló de diferentes maneras:
+El HTML 2.0 se desarrolló bajo los auspicios de la Internet Engineering Task Force para codificar lo que era la práctica común a finales de 1994. HTML+ y HTML 3.0 propusieron versiones mucho más ricas de HTML y, a pesar de no haber logrado nunca el consenso en las discusiones sobre estándares, llevaron a la adopción de nuevas características. Los esfuerzos del grupo de trabajo HTML del World Wide Web Consortium para codificar la práctica común en 1996 condujeron a HTML 3.2. 
+Cada versión del HTML ha intentado reflejar un consenso cada vez mayor entre los interlocutores de la industria. 
+El HTML 4 desarrolla el lenguaje HTML con mecanismos para hojas de estilo, ejecución de scripts, marcos, objetos incluidos, soporte mejorado para texto de derecha a izquierda y direcciones mezcladas, tablas más ricas y mejoras en formularios, ofreciendo mejoras de accesibilidad para personas con discapacidades.
+El HTML 4.01 es una revisión de HTML 4.0 que corrige errores e introduce algunos cambios.
+La última versión del HTML es el HTML 5, que mejora varios aspectos de HTML 4.01 que estaban obsoletos y eran difíciles de trabajar. Por ejemplo, el HTML 5 puede realizar cosas de forma nativa, siendo independiente de sistemas que hace tiempo están en desuso.
+
+
+2. ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos 
+con HTML?
+
+* Principio 1: Perceptible. la información y los componentes de la interfaz de usuario deben ser mostrados a los usuarios en formas que ellos puedan entender. 
+* Principio 2: Operable. Los componentes de la interfaz de usuario y la navegación debe ser manejable. 
+* Principio 3: Comprensible. La información y las operaciones de los usuarios deben ser comprensibles. 
+* Principio 4: Robustez. El contenido debe ser suficientemente robusto para que pueda ser bien interpretado por una gran variedad de agentes de usuario, incluyendo tecnologías de asistencia. 
+
+
+3. En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado?  ¿y 
+obsoleto?
+
+Desaprobado: Un elemento o atributo desaprobado es aquel que ha quedado anticuado por la presencia de estructuras nuevas. Los elementos desaprobados se definen en el manual de referencia en los lugares apropiados, pero claramente marcados como desaprobados. Los elementos desaprobados pueden declararse obsoletos en versiones futuras de HTML. 
+
+Obsoleto: Un elemento o atributo obsoleto es aquél para el cual no hay garantía de soporte por parte de un agente de usuario. Los elementos obsoletos han dejado de estar definidos en la especificación, pero se enumeran por motivos históricos en la sección de cambios del manual de referencia.
+
+
+4. Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01? 
+
+El DTD (Document Type Definition, en español "Definición de Tipo de Documento") es una especificación que define la estructura y las reglas que un documento HTML debe seguir.
+Esencialmente, el DTD le dice al navegador qué versión de HTML (o XHTML) se está utilizando y cómo debe interpretar el código del documento. El DTD se declara al comienzo de un documento HTML 
+mediante la declaración <!DOCTYPE>, que es necesaria para garantizar que el documento se renderice correctamente en modo estándar.
+Según el rigor de HTML 4.01 utilizado podemos declararla como: 
+
+1. HTML 4.01 Strict DTD
+*Descripción: Este DTD es el más estricto de los tres y está diseñado para documentos que cumplen completamente con las normas de HTML 4.01. No permite el uso de elementos y atributos que se consideran obsoletos o presentacionales.
+*Uso: Se utiliza cuando se desea un código limpio y semántico, separado completamente del diseño y la presentación.
+Declaración:
+html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+2. HTML 4.01 Transitional DTD
+*Descripción: Este DTD permite el uso de elementos y atributos que han sido eliminados del DTD Strict pero que aún se utilizan ampliamente en el desarrollo web, especialmente aquellos relacionados con la presentación (como <font>, <center>, etc.).
+*Uso: Es adecuado para documentos que mezclan contenido estructurado y elementos de presentación, lo que facilita la transición hacia un HTML más semántico.
+Declaración:
+html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+3. HTML 4.01 Frameset DTD
+
+Descripción: Este DTD es similar al DTD Transitional, pero está diseñado para documentos que utilizan marcos (<frameset>) en lugar de un cuerpo de documento estándar (<body>). Los marcos permitían dividir la ventana del navegador en múltiples secciones independientes.
+Uso: Se utiliza para documentos que implementan marcos, que eran comunes en el diseño web de la época pero que ahora están obsoletos.
+Declaración:
+html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+En HTML 5 se simplifica esta sección con la siguiente sintaxis: 
+<!DOCTYPE HTML> 
+Es importante agregar el DOCTYPE, de esta forma el navegador puede saber que 
+estamos utilizando la especificación del HTML 5.
+
+
+5. Qué son los metadatos y cómo se especifican en HTML?
+
+Los metadatos suelen describirse como "datos sobre datos". En otras palabras, si el HTML de su página web son datos, los metadatos son información adicional que se utilizan para explicar varias cosas sobre ese HTML, como:
+* La versión de HTML que utiliza una página web.
+* El título de una página web.
+* Una imagen o un texto que resuma el contenido de la página web.
+En general, la especificación de metadatos implica dos pasos:
+1. Declaración de una propiedad y de un valor para esta propiedad. Esto puede hacerse de dos maneras:
+   1. Desde dentro de un documento, por medio del elemento META.
+   2. Desde fuera de un documento, vinculando los metadatos por medio del elemento LINK (véase la sección sobre tipos de vínculos).
+2. Referencia a un perfil en el que se definen la propiedad y sus valores legales. Para designar un perfil, se usa el atributo profile del elemento HEAD.
+Obsérvese que al estar definido un perfil por el elemento HEAD, se aplica el mismo perfil a todos los elementos META y LINK de la cabecera del documento.
+
+
+
+
+
+2.a)
+<!-- Código controlado el día 12/08/2009 → 
+
+Ubicación: Puede colocarse en cualquier parte del documento HTML, incluyendo <head>, <body>, o dentro de otros elementos.
+Efecto
+Descripción: Los comentarios no tienen ningún efecto visual en la página web. Sirven para proporcionar notas o información adicional en el código.
+Elementos, Etiquetas y Atributos
+Etiqueta: Comentario HTML
+Inicio: <!--
+Fin: -->
+Contenido: Código controlado el día 12/08/2009
+Descripción: Texto dentro del comentario que no afecta la visualización ni la funcionalidad de la página.
+Obligatoriedad
+Comentarios: No son obligatorios. Se usan para documentación y aclaraciones.
+
+2.b)  
+<div id="bloque1">Contenido del bloque1</div> 
+
+Ubicación: Generalmente en la sección <body>, para estructurar el contenido visible.
+Efecto
+Descripción: Crea un contenedor de bloque que puede ser estilizado con CSS o manipulado con JavaScript.
+Elementos, Etiquetas y Atributos
+Etiqueta: <div>
+Atributo: id
+Nombre: id
+Valor: "bloque1"
+Descripción: Proporciona un identificador único para el elemento.
+Contenido: Contenido del bloque1
+Descripción: El texto o contenido que se muestra dentro del <div>.
+Obligatoriedad
+Etiqueta <div>: No es obligatoria pero es útil para estructuración.
+Atributo id: Opcional, pero útil para estilos específicos y manipulación.
+
+2.c)
+<img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32" 
+longdesc="detalles.htm" /> 
+
+Ubicación: Generalmente en la sección <body>, donde se desea mostrar la imagen.
+Efecto
+Descripción: Inserta una imagen en la página web. La mayoría de los atributos proporcionan detalles sobre la imagen y su presentación.
+Elementos, Etiquetas y Atributos
+Etiqueta: <img>
+Atributo: src
+Nombre: src
+Valor: "" (vacío)
+Descripción: La URL de la imagen. Debe ser especificado para mostrar la imagen.
+Atributo: alt
+Nombre: alt
+Valor: "lugar imagen"
+Descripción: Texto alternativo que se muestra si la imagen no se puede cargar.
+Atributo: id
+Nombre: id
+Valor: "im1"
+Descripción: Identificador único para el elemento.
+Atributo: name
+Nombre: name
+Valor: "im1"
+Descripción: Nombre para el elemento (deprecated en HTML5).
+Atributo: width
+Nombre: width
+Valor: "32"
+Descripción: Ancho de la imagen en píxeles.
+Atributo: height
+Nombre: height
+Valor: "32"
+Descripción: Altura de la imagen en píxeles.
+Atributo: longdesc
+Nombre: longdesc
+Valor: "detalles.htm"
+Descripción: URL de una descripción larga de la imagen.
+Obligatoriedad
+Atributo src: Obligatorio para que la imagen se muestre.
+Otros Atributos: Opcionales, pero útiles para accesibilidad y diseño.
+
+2.d)
+<meta name="keywords" lang="es" content="casa, compra, venta, alquiler " /> 
+<meta http-equiv="expires" content="16-Sep-2019 7:49 PM" />
+
+Sección: Estas etiquetas se colocan en el <head> del documento HTML.
+Efecto:
+La primera <meta> etiqueta proporciona palabras clave para motores de búsqueda (SEO).
+La segunda establece una fecha de expiración para la caché del documento.
+Elementos y etiquetas:
+<meta>: Etiqueta meta-informativa sin cierre.
+name: Atributo que especifica el tipo de metadato (aquí "keywords").
+lang: Atributo que indica el idioma de las palabras clave.
+content: Especifica el valor de las palabras clave.
+http-equiv: Equivale a un encabezado HTTP, en este caso "expires".
+Atributos:
+name, content, http-equiv: Obligatorios para el propósito de la etiqueta.
+lang: Opcional, pero recomendado para accesibilidad.
+
+2.e)
+<a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8" 
+rel="help">Resumen HTML </a> 
+
+Sección: Se coloca en el cuerpo (<body>) del documento.
+Efecto: Crea un hipervínculo a una página externa. Los atributos adicionales describen el tipo de documento vinculado, el idioma, y el conjunto de caracteres utilizados, proporcionando información útil para los navegadores y motores de búsqueda.
+Elementos y etiquetas:
+<a>: Etiqueta de anclaje o hipervínculo.
+href: Atributo que contiene el enlace.
+type: Especifica el tipo de recurso vinculado.
+hreflang: Especifica el idioma del recurso vinculado.
+charset: Define el conjunto de caracteres del documento vinculado.
+rel: Relación entre el documento actual y el documento vinculado (en este caso, una ayuda).
+Atributos:
+href: Obligatorio para definir la URL.
+type, hreflang, charset, rel: Opcionales, pero proporcionan metadatos útiles.
+
+2.f)
+<table width="200" summary="Datos correspondientes al ejercicio vencido"> 
+    <caption align="top"> Título </caption> 
+    <tr> 
+        <th scope="col">&nbsp;</th> 
+        <th scope="col">A</th> 
+        <th scope="col">B</th> 
+        <th scope="col">C</th> 
+    </tr> 
+    <tr>
+        <th scope="row">1º</th> 
+        <td>&nbsp;</td> 
+        <td>&nbsp;</td> 
+        <td>&nbsp;</td>
+    </tr> 
+    <tr>
+        <th scope="row">2º</th> 
+        <td>&nbsp;</td> 
+        <td>&nbsp;</td> 
+        <td>&nbsp;</td>
+<   /tr> 
+</table> 
+
+Sección: Se coloca en el cuerpo (<body>) del documento HTML.
+Efecto: Este código crea una tabla que presenta datos organizados en filas y columnas. La tabla tiene un título y un resumen que describe su contenido.
+Desglose de elementos, etiquetas y atributos:
+<table>:
+
+Elemento: Define una tabla en HTML.
+Atributos:
+width="200": Especifica el ancho de la tabla (200 píxeles en este caso). Es opcional y obsoleto en HTML5, aunque aún es aceptado.
+summary="Datos correspondientes al ejercicio vencido": Proporciona un resumen textual del contenido de la tabla para accesibilidad. Este atributo es opcional y, aunque está en desuso, es útil para mejorar la accesibilidad.
+<caption>:
+
+Elemento: Representa el título o descripción de la tabla.
+Atributos:
+align="top": Coloca el título en la parte superior de la tabla. Este atributo es opcional y está obsoleto en HTML5 (el título se coloca en la parte superior de forma predeterminada).
+<tr>:
+
+Elemento: Define una fila en la tabla.
+No tiene atributos en este caso, pero puede tener atributos como align o valign para controlar la alineación (también obsoletos en HTML5).
+<th>:
+
+Elemento: Define un encabezado de columna o fila.
+Atributos:
+scope="col": Indica que la celda es un encabezado de columna. Es útil para mejorar la accesibilidad.
+scope="row": Indica que la celda es un encabezado de fila (en este caso, para las filas "1º" y "2º").
+Contenido:
+&nbsp;: Representa un espacio en blanco.
+A, B, C, 1º, 2º: Son los encabezados de las columnas y filas de la tabla.
+<td>:
+
+Elemento: Define una celda de datos en la tabla.
+No tiene atributos adicionales en este caso.
+Contenido: &nbsp; es una entidad de espacio en blanco que se utiliza para rellenar las celdas.
+Efecto General:
+Esta tabla organiza datos en tres columnas tituladas "A", "B", "C", y dos filas identificadas por "1º" y "2º". Las celdas de datos están vacías (&nbsp; crea un espacio en blanco). 
+El resumen describe la finalidad de la tabla (datos correspondientes al ejercicio vencido), y el título ("Título") aparece en la parte superior de la tabla. Los encabezados de columnas 
+y filas se distinguen para mejorar la semántica y accesibilidad de la tabla.
+
+
+
+
+
+3.a)
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+Descripción: Este es un enlace simple que lleva al usuario a http://www.google.com.ar.
+Efecto visual: El texto "Click aquí para ir a Google" aparece como un hipervínculo subrayado en la página. Al hacer clic, se redirige al usuario a Google en la misma ventana o pestaña del navegador.
+Atributos:
+href: Define la URL a la que se accede al hacer clic. Es obligatorio para que el enlace funcione.
+Comportamiento: El enlace se abre en la misma pestaña.
+
+<a href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a>
+Descripción: Este enlace también lleva a http://www.google.com.ar, pero con un atributo adicional target="_blank".
+Efecto visual: Es visualmente idéntico al primer enlace (hipervínculo subrayado), pero el comportamiento es diferente.
+Atributos:
+href: URL del destino del enlace.
+target="_blank": Indica que el enlace debe abrirse en una nueva pestaña o ventana del navegador.
+Comportamiento: Al hacer clic, el enlace se abre en una nueva pestaña o ventana. Esto permite mantener abierta la página actual.
+
+<a href="http://www. google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help">
+Descripcion: El tercer caso, al tener un espacio, rompe el link y no sirve. Además, los atributos de type, hreflang, charset, y rel, no corresponden a un elemento del tipo “a”.
+Version corregida del enlace:
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+Conclusión:
+El espacio en la URL rompe el enlace y debe eliminarse.
+Los atributos adicionales (type, hreflang, charset, rel) no son relevantes ni apropiados para un elemento <a>, excepto tal vez hreflang y rel, que tienen un uso marginal.
+
+<a href="#">Click aquí para ir a Google</a>
+Descripción: Este enlace tiene un href="#", lo que significa que no redirige a una URL externa, sino que realiza una navegación interna dentro de la misma página.
+Efecto visual: El enlace es visible con el texto "Click aquí para ir a Google", pero al hacer clic no redirige a ningún sitio externo ni hace ningún cambio visible en la página.
+Atributos:
+href="#": Hace que el enlace "vaya" al inicio de la página actual, lo que puede resultar en un "salto" a la parte superior de la misma.
+Comportamiento: El clic no lleva a Google, sino que simplemente recarga la página actual o no tiene ningún efecto visible, dependiendo de cómo esté implementada la página.
+
+3.b)
+<p><img src="im1.jpg" alt="imagen1" /><a href="http://www.google.com.ar">Click aquí</a></p> 
+Descripción: La imagen se muestra primero, seguida de un enlace con el texto "Click aquí" que redirige a Google.
+Efecto visual: Aparece una imagen en pantalla, y justo al lado o debajo (dependiendo del estilo) aparece el texto "Click aquí", que es un enlace.
+Comportamiento: Solo el texto "Click aquí" es clicable, la imagen no tiene interacción.
+Atributos:
+src y alt en la imagen.
+href en el enlace que contiene el texto "Click aquí".
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> Click aquí</p>
+Descripción: La imagen está dentro de un enlace, lo que la convierte en clicable y lleva al usuario a Google. Después de la imagen, aparece el texto "Click aquí", pero este texto no es un enlace.
+Efecto visual: La imagen se muestra en pantalla y, al pasar el cursor sobre ella, se puede hacer clic en ella. El texto "Click aquí" no tiene funcionalidad de enlace, es solo texto visible.
+Comportamiento: La imagen redirige al usuario a Google al hacer clic. El texto "Click aquí" no es interactivo.
+Atributos:
+src y alt en la imagen.
+href en el enlace que envuelve la imagen.
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="ima 
+gen1" />Click aquí</a></p>
+Hay un espacio en el valor del atributo alt, que queda como "ima gen1". Aunque el atributo alt permite espacios, la forma en que has introducido el espacio (corte de línea) es 
+incorrecta, lo que podría ocasionar que el código no se interprete bien y la imagen no se muestre correctamente en algunos casos o navegadores.
+La solucion es simple, eliminar el espacio.
+Resultado: el enlace funcionara tanto al hacer click en la imagen como en el texto "Click aqui". La imagen deberia cargarse correctamente, y en caso de que no se cargue, se
+mostrara el texto alternativo "imagen1"
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> <a 
+href="http://www.google.com.ar">Click aquí</a></p>
+Tiene dos elementos enlazados por separado:
+1. Un enlace de imagen: Este crea un enlace a http://www.google.com.ar donde la imagen es clicable. Si hace click en la imagen (im1.jpg), te redirigira al sitio de google.
+2. Un enlace de texto: Enlace de texto que tambien lleva a http://www.google.com.ar. Si hace click en el texto "Click aqui", te redirigira al mismo sitio.
+
+3.c)
+<ul>   
+<li>xxx</li> 
+<li>yyy</li> 
+<li>zzz</li> 
+</ul> 
+<ul>: Representa una lista desordenada (unordered list), donde cada elemento de la lista aparece con un símbolo por defecto (generalmente un círculo o un punto, 
+dependiendo del navegador y los estilos).
+<li>: Es la etiqueta para cada elemento de lista (list item). En este caso, los elementos de la lista son xxx, yyy y zzz.
+
+<ol> 
+<li>xxx</li> 
+<li>yyy</li> 
+<li>zzz</li> 
+</ol>
+<ol>: Representa una lista ordenada. Los elementos estan enumerados automaticamente por el navegador, y los numeros aumentan de forma secuencial.
+
+<ol> 
+<li>xxx</li> 
+</ol> 
+<ol> 
+<li value="2">yyy</li> 
+</ol> 
+<ol> 
+<li 
+value="3">zzz</li> 
+</ol> 
+Tres listas separadas, cada una con un solo elemento. Sin embargo, en el segundo y tercer bloque, se define manualmente el valor del número con el atributo value, lo que permite continuar la numeración desde el número 2 y 3, respectivamente.
+Diferencia importante: aunque parece que los elementos sean de la misma lista, en realidad, son de tres listas diferentes.
+
+<blockquote> 
+<p>1. xxx<br /> 
+2. yyy<br /> 
+3. zzz</p> 
+</blockquote> 
+Este código genera un bloque de cita (<blockquote>), que se utiliza comúnmente para citar o destacar un bloque de texto. No se utiliza la numeracion automatica del navegador, y los numeros estan incluidos como parte del texto. El codigo <br />  se utiliza como salto de linea para no romper el texto.
+
+3.d)
+<table border="1" width="300"> 
+<tr> 
+<th>Columna 1</th> 
+<th>Columna 2</th> 
+</tr> 
+<tr> 
+<td>Celda 1</td> 
+<td>Celda 2</td> 
+</tr> 
+<tr> 
+<td>Celda 3</td> 
+<td>Celda 4</td> 
+</tr> 
+</table> 
+Etiqueta <tr>:
+Se utiliza para indicar una fila de tabla "Table row". Define una fila dentro de una tabla. Cada fila contiene una serie de celdas que pueden ser tanto de encabezado <th> como de datos <td>.
+Etiqueta <th> para encabezados:
+Las celdas de la primera fila usan la etiqueta <th>, que significa "table header"(encabezado de tabla)
+Tabla de bordes con un ancho de 300. La primera fila consisten en encabezados que muestran "Columna 1" y "Columna 2", dandoles enfasis. La segunda fila ya no es un encabezado sino que son celdas de datos, que muestran la informacion. Eso mismo para con la segunda fila.
+
+<table border="1" width="300"> 
+<tr> 
+<td><div align="center"><strong>Columna 1</strong></div></td> 
+<td><div align="center"><strong>Columna 2</strong></div></td> 
+</tr> 
+<tr> 
+<td>Celda 1</td> 
+<td>Celda 2</td> 
+</tr> 
+<tr> 
+<td>Celda 3</td> 
+<td>Celda 4</td> 
+</tr> 
+</table>
+Si bien, visualmente, este otro caso es igual al anterior, la diferencia recae en que la primera fila no utiliza los elementos <th> para los encabezados de la tabla, sino que recurre a utilizar un elemento <td> para la celda de datos, y genera un div (que alinea en el centro de la columna) y un strong para darle el mismo formato que a un encabezado. En cuanto a legibilidad y conveniencia, es preferible el otro caso.
+
+3.e)
+<table width="200"> 
+<caption> 
+Título 
+</caption> 
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd"> 
+&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr>   
+</table>
+El título se coloca fuera de la tabla, sobre ella, usando <caption>, que es la forma semánticamente correcta en HTML.
+
+<table width="200"> 
+<tr> 
+<td colspan="3"><div align="center">Título</div></td> 
+</tr> 
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+</table>
+El título se coloca dentro de la tabla en una fila extra que ocupa las tres columnas, usando <td colspan="3">.
+
+3.f)
+<table width="200"> 
+<tr> 
+<td colspan="3"><div align="center">Título</div></td> 
+</tr> 
+<tr> 
+<td rowspan="2" bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+</table>
+Uso de rowspan: se usa rowspan="2" para que la celda de la primera columna ocupe dos filas verticalmente.
+
+<table width="200"> 
+<tr> 
+<td colspan="3"><div 
+align="center">Título</div></td> 
+</tr> 
+<tr> 
+<td colspan="2" bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+</table>
+Uso de colspan: se usa colspan="2" para que la celda de la primera columna en la segunda fila ocupe dos columnas horizontalmente.
+
+3.g)
+<table width="200" border="1"> 
+<tr> 
+<td colspan="3">
+<div align="center">Título</div>
+</td> 
+</tr> 
+<tr> 
+<td colspan="2"rowspan="2">&nbsp;</td> 
+<td>&nbsp;</td> 
+</tr> 
+<tr> 
+<td width="50%">&nbsp;</td> 
+</tr> 
+</table>
+Esta tabla tiene 3 columnas.
+El titulo abarca 3 columnas.
+Hay una celda que se extiende en ancho y alto 2 columnas y 2 filas.
+
+<table width="200" border="1" cellpadding="0" 
+cellspacing="0"> 
+<tr> 
+<td colspan="2">
+<div align="center">Título</div>
+</td> 
+</tr> 
+<tr> 
+<td rowspan="2">&nbsp;</td> 
+<td>&nbsp;</td> 
+</tr> 
+<tr> 
+<td width="50%">&nbsp;</td> 
+</tr> 
+</table>
+Esta tabla tiene 2 columnas.
+Uso de cellpadding y cellspacing: estos atributos están establecidos en 0, eliminando el espacio entre y dentro de las celdas, mientras que en el primer fragmento, no se especifica, por lo que las celdas tendrán un espacio por defecto.
+El titulo abarca 2 columnas.
+Hay una celda que se extiende en alto 2 filas.
+
+3.h)
+<form id="form1" name="form1" action="procesar.php" method="post" target="_blank"> 
+<fieldset> 
+<legend>LOGIN</legend> 
+Usuario: <input type="text" id="usu1" name="usu1" value="xxx" /><br /> 
+Clave: <input type="password" id="clave1" name="clave1" value="xxx" /> 
+</fieldset> 
+<input type="submit" id="boton1" name="boton1" value="Enviar" /> 
+</form>
+Uso del metodo POST.
+Envia los datos a un archivo PHP.
+Boton de submit estandar.
+
+<form id="form2" name="form2" action="" method="get" target="_blank"> 
+LOGIN<br /> 
+<label>Usuario: <input type="text" id="usu2" name="usu2" /></label><br /> 
+<label>Clave: <input type="text" id="clave2" name="clave2" /></label><br /> 
+<input type="submit" id="boton2" name="boton2" value="Enviar" /> 
+</form>
+Uso del metodo GET.
+No tiene accion definida.
+En este formulario el campo de contraseña no esta oculto(es un campo de texto normal).
+Boton de submit estandar.
+
+<form id="form3" name="form3" action="mailto:xx@xx.com” enctype=text/plain method="p 
+ost" target="_blank"> 
+<fieldset> 
+<legend>LOGIN</legend> 
+Usuario: <input type="text" id="usu3" name="usu3" /><br /> 
+Clave: <input type="password" id="clave3" name="clave3" /> 
+</fieldset> 
+<input type="reset" id="boton3" name="boton3" value= 
+"Enviar" /> 
+</form>
+Uso del metodo POST pero con un mailto.
+Intenta enviar los datos a un correo electronico.
+Tiene un botón reset, que solo limpia el formulario en lugar de enviarlo.
+
+3.i)
+<label>Botón 1 
+<button type="button" name="boton1" id="boton1"> 
+<img src="logo.jpg" alt="Botón con imagen " width="30" height="20" /><br /> 
+<b>CLICK AQUÍ</b></button></label>
+Usa el elemento <button>, lo que permite añadir otros elementos HTML dentro de él (como imágenes y texto formateado). Incluye una imagen (<img>) y permite personalización adicional como texto en negrita, lo que lo hace más flexible en cuanto a diseño. Es ideal si deseas personalizar el botón con gráficos o darle un estilo único.
+
+<label>Botón 2 
+<input type="button" name="boton2" id="boton2" value="CLICK AQUÍ" /> 
+</label>
+Usa <input type="button">, que es más limitado y solo puede contener texto simple a través del atributo value. Solo puede mostrar texto plano y no admite la inclusión de otros elementos HTML. Es una opción simple y rápida si solo necesitas un botón con texto.
+
+3.j)
+<p><label><input type="radio" name="opcion" id="X" value="X" />X</label><br /> 
+<label><input type="radio" name="opcion" id="Y" value="Y" />Y</label></p>
+Botones de radio agrupados correctamente con el mismo name, permitiendo solo una selección.
+
+<p><label><input type="radio" name="opcion1" id="X" value="X" />X</label><br /> 
+<label><input type="radio" name="opcion2" id="Y" value="Y" />Y</label></p>
+Botones de radio con nombres diferentes, permitiendo seleccionar ambos a la vez.
+
+3.k)
+<select name="lista"> 
+<optgroup label="Caso 1"> 
+<option>Mayo</option> 
+<option>Junio</option> 
+</optgroup> 
+<optgroup label="Caso 2"> 
+<option>Mayo</option> 
+<option>Junio</option> 
+</optgroup> 
+</select>
+Permite seleccionar una sola opción. Ideal para elecciones simples.
+Usa name="lista"; el valor seleccionado se envía como un único elemento.
+El usuario selecciona una opción de un menú desplegable que se cierra automáticamente después de la selección.
+
+<select name="lista[]" multiple="multiple"> 
+<optgroup label=" Caso 1"> 
+<option>Mayo</option> 
+<option>Junio</option> 
+</optgroup> 
+<optgroup label=" Caso 2"> 
+<option>Mayo</option> 
+<option>Junio</option> 
+</optgroup> 
+</select>
+Permite seleccionar varias opciones.
+Usa name="lista[]"; los valores seleccionados se envían como un array, permitiendo múltiples selecciones.
+El menú se expande y permite que el usuario seleccione varias opciones a la vez, manteniendo el menú abierto.
+
+
+
+
+
+4)
