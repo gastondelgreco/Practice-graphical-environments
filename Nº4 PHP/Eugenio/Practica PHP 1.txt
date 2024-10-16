@@ -1,0 +1,196 @@
+Ejercicio 1:
+
+Identificar:
+• las variables y su tipo
+• los operadores
+• las funciones y sus parámetros
+• las estructuras de control
+• cuál es la salida por pantalla
+
+<?php
+function doble($i) {          | funcion definida por usuario.
+ return $i*2;                 | "*" operacion Multiplicacion.
+}
+$a = TRUE;                    | tipo booleano, "=" operacion Asignacion.
+$b = "xyz";                   | tipo string, "=" operacion Asignacion.
+$c = 'xyz';                   | tipo string, "=" peracion Asignacion.
+$d = 12;                      | tipo integer, "=" operacion Asignacion.
+echo gettype($a);             | funcion que devuelve el tipo de dato de la variable.
+echo gettype($b);             | funcion que devuelve el tipo de dato de la variable.
+echo gettype($c);             | funcion que devuelve el tipo de dato de la variable.
+echo gettype($d);             | funcion que devuelve el tipo de dato de la variable.
+if (is_int($d)) {             | "is_int" devuelve TRUE si es un integer.
+ $d += 4;                     | "+=" operacion Asignacion con Suma.
+}
+if (is_string($a)) {          | "is_string" devuelve TRUE si es un string, "if" es una condicion.
+ echo "Cadena: $a";
+}
+$d = $a ? ++$d : $d*3;        | "++" operacion Incremento, "?" operacion Ternario.
+$f = doble($d++);             | tipo entero.
+$g = $f += 10;                | tipo entero.
+echo $a, $b, $c, $d, $f , $g; | "," operacion Concatenacion.
+?> 
+
+Salida por pantalla:
+"booleanstringstringinteger1xyzxyz184444"
+
+Ejercicio 2:
+a) Indicar si los siguientes códigos son equivalentes:
+
+<?php
+$i = 1;
+while ($i <= 10) {
+ print $i++;
+}
+?>
+Devuelve el numero y le incrementa en la misma operacion, hasta q termine el while.
+
+<?php
+$i = 1;
+while ($i <= 10):
+ print $i;
+ $i++;
+endwhile;
+?>
+Devuelve el numero y luego le incrementa una linea abajo, hasta q termine el while.
+
+<?php
+$i = 0;
+do {
+ print ++$i;
+} while ($i<10);
+?>
+Devuelve e incrementa hasta q termine el do while.
+
+
+b)
+
+<?php
+for ($i = 1; $i <= 10; $i++) {
+ print $i;
+}
+?>
+Devuelve el numero mientras dure el for.
+
+<?php
+for ($i = 1; $i <= 10; print $i, $i++) ;
+?>
+Hace lo mismo q el anterior pero la instruccion esta dentro de los parametros del for.
+
+<?php
+for ($i = 1; ;$i++) {
+ if ($i > 10) {
+ break;
+ }
+ print $i;
+}
+?>
+Falta el parametro de condicion en el for, pero se compensa con el if dentro del for, el cual cortara al llegar al 11.
+
+<?php
+$i = 1;
+for (;;) {
+ if ($i > 10) {
+ break;
+ }
+ print $i;
+ $i++;
+}
+?>
+Este for no tienen ningun parametro, tiene el if igual q el anterior, se define la variable antes del for, y al final de cada loop se hace el incremento.
+
+c)
+
+<?php
+…
+…
+if ($i == 0) {
+ print "i equals 0";
+} elseif ($i == 1) {
+ print "i equals 1";
+} elseif ($i == 2) {
+ print "i equals 2";
+}
+?>
+Usa varios if anidados para ir evaluando el contenido de i, e indicarlo cuando coincide.
+
+<?php
+…
+…
+switch ($i) {
+ case 0:
+ print "i equals 0";
+ break;
+ case 1:
+ print "i equals 1";
+ break;
+ case 2:
+ print "i equals 2";
+ break;
+}
+?>
+Hace lo mismo pero con un case, lo cual es mas comodo.
+
+
+Ejercicio 3
+
+Explicar para qué se utiliza el siguiente código:
+
+a)
+<html>
+<head><title>Documento 1</title></head>
+<body>
+<?php
+ echo "<table width = 90% border = '1' >";
+ $row = 5;
+ $col = 2;
+ for ($r = 1; $r <= $row; $r++) {
+ echo "<tr>";
+ for ($c = 1; $c <= $col;$c++) {
+ echo "<td>&nbsp;</td>\n";
+ } echo "</tr>\n";
+ }
+ echo "</table>\n";
+?>
+</body>
+</html>
+Es una forma de crear una tabla de 5 filas y 2 columnas combinando html y php.
+
+<html>
+<head><title>Documento 2</title></head>
+<body>
+<?php
+if (!isset($_POST['submit'])) {
+?>
+ <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+ Edad: <input name="age" size="2">
+ <input type="submit" name="submit" value="Ir">
+ </form>
+<?php
+ }
+else {
+ $age = $_POST['age'];
+ if ($age >= 21) {
+ echo 'Mayor de edad';
+ }
+ else {
+ echo 'Menor de edad';
+ }
+}
+?>
+</body></html>
+Es un formulario en el que pide al usuario su edad y dependiendo de la edad devuelve si es mayor o menor.
+
+Ejercicio 4
+
+"El
+ El clavel blanco" 
+Esto pasa ya que las variables se definen luego del primer echo, por eso sale vacio.
+
+Ejercicio 5
+
+Analizar el siguiente ejemplo: Contador de visitas a una página web.
+
+El "contador.php" lee el archivo .dat, y le agrega uno al contador cada vez q se visita la pagina, osea, cada vez que se ejecuta.
+El "visitas.php" llama al archivo "contador.php".
+
