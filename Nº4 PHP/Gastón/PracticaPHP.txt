@@ -1,0 +1,429 @@
+Practica php: variables, tipos, operadores, expresiones, estructuras de control
+PHP: arrays, funciones
+
+Ejercicio 1:
+En el siguiente código identificar:
+• las variables y su tipo
+• los operadores
+• las funciones y sus parámetros
+• las estructuras de control
+• cuál es la salida por pantalla
+
+<?php
+function doble($i) {
+ return $i*2;
+}
+$a = TRUE;
+$b = "xyz";
+$c = 'xyz';
+$d = 12;
+echo gettype($a);
+echo gettype($b);
+echo gettype($c);
+echo gettype($d);
+if (is_int($d)) {
+ $d += 4;
+}
+if (is_string($a)) {
+ echo "Cadena: $a";
+}
+$d = $a ? ++$d : $d*3;
+$f = doble($d++);
+$g = $f += 10;
+echo $a, $b, $c, $d, $f , $g;
+?> 
+
+Variables y su tipo:
+$a: booleano (tipo bool). Se le asigna el valor TRUE.
+$b: cadena de texto (tipo string). Se le asigna el valor "xyz".
+$c: cadena de texto (tipo string). Se le asigna el valor 'xyz'.
+$d: entero (tipo int). Se le asigna el valor 12.
+$f: no tiene un tipo explícito inicial, pero al final será int ya que se le asigna el resultado de la función doble(), que devuelve un número entero.
+$g: no tiene un tipo explícito inicial, pero al final será int, ya que es el resultado de una suma de enteros.
+
+Operadores:
+   * Operador Unario: Opera sobre un único valor. El ++ es un ejemplo, y sirve para incrementar el valor.
+   * Operador Binario: La suma o la multiplicación son ejemplos de esto.
+   * Operador Ternario. La primera operación que aparece es un operador ternario (?).
+Operador de asignación (=): Utilizado para asignar valores a las variables ($a = TRUE, $b = "xyz", etc.).
+Operador de incremento (++): Incrementa el valor de una variable en uno (++$d, $d++).
+Operador ternario (?:): Evalúa la condición $a y asigna un valor a $d dependiendo del resultado ($d = $a ? ++$d : $d*3).
+Operador de suma (+=): Aumenta el valor de una variable por una cantidad específica ($d += 4, $f += 10).
+Operador de multiplicación (*): Utilizado en la función doble($i) para multiplicar el valor de $i por 2.
+Concatenación de cadenas (,): Concatenar valores en echo.
+
+Funciones y sus parámetros:
+doble($i): Esta función toma un parámetro ($i) y devuelve el valor de $i multiplicado por 2.
+gettype($var): Función que devuelve el tipo de dato de la variable pasada como parámetro.
+is_int($d): Verifica si la variable $d es de tipo entero.
+is_string($a): Verifica si la variable $a es de tipo cadena de texto.
+echo: Imprime el valor de una o varias expresiones en pantalla.
+
+Estructuras de control:
+Condicional if:
+if (is_int($d)) { $d += 4; }: Si $d es un entero, se le suma 4.
+if (is_string($a)) { echo "Cadena: $a"; }: Si $a es una cadena de texto, imprime "Cadena: $a".
+Operador ternario: $d = $a ? ++$d : $d*3; verifica si $a es TRUE, incrementa $d si es cierto, o lo multiplica por 3 si es falso.
+
+Salida por pantalla:
+booleanstringstringinteger1xyzxyz184444
+
+
+
+
+
+Ejercicio 2
+Indicar si los siguientes códigos son equivalentes.
+
+a)
+<?php
+$i = 1;
+while ($i <= 10) {
+ print $i++;
+}
+?>
+Este código usa un bucle while que imprime el valor de $i y luego incrementa $i en cada iteración. Se detiene cuando $i es mayor que 10.
+Salida: Imprime los números del 1 al 10 (inclusive) y deja el valor $i en 11 cortando el while.
+
+<?php
+$i = 1;
+while ($i <= 10):
+ print $i;
+ $i++;
+endwhile;
+?>
+Este es el mismo código que el primero, pero con una sintaxis alternativa. En lugar de llaves {}, usa endwhile. El funcionamiento es idéntico al anterior.
+Salida: Imprime los números del 1 al 10(inclusive) y deja el valor $i en 11 cortando el while.
+
+<?php
+$i = 0;
+do {
+ print ++$i;
+} while ($i<10);
+?>
+Este código usa un bucle do...while. A diferencia de los bucles while, el do...while ejecuta primero el bloque de código y luego evalúa la condición. En este caso, el valor de $i se incrementa antes de imprimirse con ++$i.
+Salida: Imprime los números del 1 al 10 (inclusive).
+
+b)
+<?php
+for ($i = 1; $i <= 10; $i++) {
+ print $i;
+}
+?>
+Este es un bucle for que imprime los números del 1 al 10. Incrementa $i después de cada impresión.
+Salida: Imprime los números del 1 al 10 (inclusive).
+
+<?php
+for ($i = 1; $i <= 10; print $i, $i++) ;
+?>
+Este código utiliza la condición y el incremento de la variable $i en la misma línea del for, pero en lugar de un bloque de código {}, imprime directamente los números con print $i antes de incrementar $i.
+Salida: Imprime los números del 1 al 10 (inclusive).
+
+<?php
+for ($i = 1; ;$i++) {
+ if ($i > 10) {
+ break;
+ }
+ print $i;
+}
+?>
+En este caso, la condición del bucle se evalúa dentro del bloque de código con if. El bucle se ejecuta indefinidamente hasta que la condición if ($i > 10) se cumple y hace break.
+Salida: Imprime los números del 1 al 10 (inclusive).
+
+<?php
+$i = 1;
+for (;;) {
+ if ($i > 10) {
+ break;
+ }
+ print $i;
+ $i++;
+}
+?>
+Este código es muy similar al anterior, pero omite los parámetros en el for. El bucle es infinito y se detiene con break cuando $i supera 10.
+Salida: Imprime los números del 1 al 10 (inclusive) y deja el valor $i en 11.
+
+c)
+<?php
+if ($i == 0) {
+ print "i equals 0";
+} elseif ($i == 1) {
+ print "i equals 1";
+} elseif ($i == 2) {
+ print "i equals 2";
+}
+?>
+Este código usa una serie de condiciones if...elseif para evaluar el valor de $i.
+Evalúa cada condición de forma secuencial: si $i es igual a 0, imprime "i equals 0". Si $i es igual a 1, imprime "i equals 1", y así sucesivamente.
+Se detiene cuando se encuentra la primera condición verdadera.
+
+<?php
+switch ($i) {
+ case 0:
+ print "i equals 0";
+ break;
+ case 1:
+ print "i equals 1";
+ break;
+ case 2:
+ print "i equals 2";
+ break;
+}
+?>
+Este código utiliza una estructura switch, donde el valor de $i se compara con cada caso (case).
+Si $i es igual a 0, imprime "i equals 0", y lo mismo para los valores 1 y 2.
+Cada case tiene un break que evita que se sigan ejecutando los casos siguientes una vez que se encuentra una coincidencia.
+Esta forma es mejor cuando se tienen que evaluar varias condiciones para una misma variable, utilizar esta estructura case es la mejor practica, ya que es mas facil de leer y actualizar.
+
+
+
+
+
+Ejercicio 3
+Explicar para qué se utiliza el siguiente código:
+
+a)
+<html>
+<head><title>Documento 1</title></head>
+<body>
+<?php
+ echo "<table width = 90% border = '1' >";
+ $row = 5;
+ $col = 2;
+ for ($r = 1; $r <= $row; $r++) {
+ echo "<tr>";
+ for ($c = 1; $c <= $col;$c++) {
+ echo "<td>&nbsp;</td>\n";
+ } echo "</tr>\n";
+ }
+ echo "</table>\n";
+?>
+</body></html>
+Se genera una tabla HTML con una anchura del 90% de la página y un borde.
+La tabla tiene un número fijo de 5 filas ($row = 5) y 2 columnas ($col = 2).
+El primer bucle for recorre las filas, y dentro de ese bucle hay otro for que recorre las columnas, generando el código HTML para una tabla de 5 filas y 2 columnas.
+Cada celda de la tabla (<td>) está vacía, excepto por un espacio (&nbsp;) que se usa para que las celdas aparezcan visibles.
+
+b)
+<html>
+<head><title>Documento 2</title></head>
+<body>
+<?php
+if (!isset($_POST['submit'])) {
+?>
+ <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+ Edad: <input name="age" size="2">
+ <input type="submit" name="submit" value="Ir">
+ </form>
+<?php
+ }
+else {
+ $age = $_POST['age'];
+ if ($age >= 21) {
+ echo 'Mayor de edad';
+ }
+ else {
+ echo 'Menor de edad';
+ }
+}
+?>
+</body></html>
+Cuando se carga la página por primera vez, se muestra un formulario HTML que permite al usuario ingresar su edad. El formulario envía la información a la misma página usando el método POST (esto se define con action="<?php echo $_SERVER['PHP_SELF']; ?>").
+El campo de entrada para la edad (<input name="age">) es de tamaño 2.
+El botón de envío se define con <input type="submit" name="submit" value="Ir">
+
+
+
+
+
+Ejercicio 4
+Si el archivo datos.php contiene el código que sigue:
+<?php
+$color = 'blanco';
+$flor = 'clavel';
+?>
+Este archivo define dos variables:
+$color con blanco
+$flor con clavel
+
+Indicar las salidas que produce el siguiente código. Justificar.
+<?php
+echo "El $flor $color \n";
+include 'datos.php';
+echo " El $flor $color";
+?>
+Primera salida (antes de incluir datos.php): El (sin valores de variables, ya que no están definidas aún).
+Segunda salida (después de incluir datos.php): El clavel blanco.
+
+"El
+El clavel blanco"
+
+
+
+
+
+Ejercicio 5
+Analizar el siguiente ejemplo: Contador de visitas a una página web
+
+contador.php
+<?
+// Archivo para acumular el numero de visitas
+$archivo = "contador.dat";
+// Abrir el archivo para lectura
+$abrir = fopen($archivo, "r");
+// Leer el contenido del archivo
+$cont = fread($abrir, filesize($archivo));
+// Cerrar el archivo
+fclose($abrir);
+// Abrir nuevamente el archivo para escritura
+$abrir = fopen($archivo, "w");
+// Agregar 1 visita
+$cont = $cont + 1;
+// Guardar la modificación
+$guardar = fwrite($abrir, $cont);
+// Cerrar el archivo
+fclose($abrir);
+// Mostrar el total de visitas
+echo "<font face='arial' size='3'>Cantidad de visitas:".$cont."</font>";
+?>
+
+visitas.php
+<!-- Página que va a contener al contador de visitas -->
+<html>
+<head></head>
+<body>
+<? include("contador.php")?>
+</body>
+</html>
+
+En la misma carpeta, crear el archivo de texto contador.dat, con el valor inicial del contador y con permisos de lectura y escritura.
+
+Realizado.
+
+
+
+
+
+Practica php: arrays, funciones
+
+Ejercicio 1
+Indicar si los siguientes códigos son equivalentes.
+
+<?php
+$a = array( 'color' => 'rojo',
+ 'sabor' => 'dulce',
+ 'forma' => 'redonda',
+ 'nombre' => 'manzana',
+ 4
+ );
+?>
+
+<?php
+$a['color'] = 'rojo';
+$a['sabor'] = 'dulce';
+$a['forma'] = 'redonda';
+$a['nombre'] = 'manzana';
+$a[] = 4;
+?> 
+
+Ambos codigos son equivalentes. El resultado es un arreglo con las mismas claves y valores:
+Las claves asociativas('color', 'sabor', 'forma', 'nombre').
+El valor 4 se asigna a la clave numerica 0.
+La diferencia principal solo es el estilo de como se declara y construye el arreglo, pero el resultado es el mismo.
+
+
+
+
+
+Ejercicio 2:
+En cada caso, indicar las salidas correspondientes:
+
+a)
+<?php
+$matriz = array("x" => "bar", 12 => true);
+echo $matriz["x"];
+echo $matriz[12];
+?>
+Salida: bar1
+
+b)
+<?php
+$matriz = array("unamatriz" => array(6 => 5, 13 => 9, "a" => 42));
+echo $matriz["unamatriz"][6];
+echo $matriz["unamatriz"][13];
+echo $matriz["unamatriz"]["a"];
+?>
+Salida: 5942
+
+c)
+<?php
+$matriz = array(5 => 1, 12 => 2);
+$matriz[] = 56;
+$matriz["x"] = 42; unset($matriz[5]); unset($matriz);
+?>
+Salida: NULL(no hay salida)
+
+
+
+
+
+Ejercicio 3:
+En cada caso, indicar las salidas correspondientes:
+
+a)
+<?php
+$fun = getdate();
+echo "Has entrado en esta pagina a las $fun[hours] horas, con $fun[minutes] minutos y $fun[seconds]
+segundos, del $fun[mday]/$fun[mon]/$fun[year]";
+?>
+Salida: Has entrado en esta pagina a las 4 horas, con 29 minutos y 58
+segundos, del 16/10/2024
+
+b)
+<?php
+function sumar($sumando1,$sumando2){
+ $suma=$sumando1+$sumando2;
+ echo $sumando1."+".$sumando2."=".$suma;
+}
+sumar(5,6);
+?>
+Salida: 5+6=11
+
+Ejercicio 4:
+Analizar la siguiente función, y escribir un script para probar su funcionamiento:
+
+function comprobar_nombre_usuario($nombre_usuario){
+ //compruebo que el tamaño del string sea válido.
+ if (strlen($nombre_usuario)<3 || strlen($nombre_usuario)>20){
+ echo $nombre_usuario . " no es válido<br>";
+ return false;
+ }
+ //compruebo que los caracteres sean los permitidos
+ $permitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-
+_";
+ for ($i=0; $i<strlen($nombre_usuario); $i++){
+ if (strpos($permitidos, substr($nombre_usuario,$i,1))===false){
+ echo $nombre_usuario . " no es válido<br>";
+ return false;
+ }
+ }
+ echo $nombre_usuario . " es válido<br>";
+ return true;
+ // Pruebas
+$usuarios_a_probar = [
+    "usuario",        // Válido
+    "us",            // No válido (demasiado corto)
+    "muy_largo_usuario_de_prueba", // No válido (demasiado largo)
+    "usuario123",    // Válido
+    "usuario@prueba", // No válido (carácter no permitido)
+    "user_name",     // Válido
+    "us3r-n4me",     // Válido
+    "us!er",         // No válido (carácter no permitido)
+    "12",            // No válido (demasiado corto)
+    "usuario_de_prueba_largo" // No válido (demasiado largo)
+];
+
+foreach ($usuarios_a_probar as $usuario) {
+    comprobar_nombre_usuario($usuario);
+}
+?>
