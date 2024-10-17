@@ -1,0 +1,46 @@
+Prácticaphp: función mail(), variables de sesión.
+
+Función mail()
+bool mail ( string $to , string $subject , string $message [, string $additional_headers [, string
+$additional_parameters ]] )
+Ejemplo
+<?php
+$destinatario = "xx@xx.com ";
+$asunto = "Prueba";
+$cuerpo = "Esto es una prueba de envío de correo a través del servidor";
+mail($destinatario,$asunto,$cuerpo)
+?>
+
+Ejercicio 1
+- Escribir un script en PHP para poder enviar un correo electrónico, con formato HTML, a
+través del servidor.
+
+
+
+
+
+Ejercicio 2
+- Confeccionar una página de Contacto que presente un formulario para que los visitantes
+puedan enviar consultas al webmaster.
+
+
+
+
+
+Ejercicio 3
+- Escribir un script para que un visitante recomiende el sitio a un amigo. 
+
+Variables de sesión
+La función session_start() inicia una sesión para el usuario o continúa la sesión abierta en otras
+páginas.
+La sesión se tiene que inicializar antes de escribir cualquier texto en la página.
+Una vez inicializada, se pueden utilizar variables de sesión a través del array asociativo
+$_SESSION["nombre _variable"], es decir, almacenar datos para ese usuario que se conserven
+durante toda su visita o recuperar datos almacenados en páginas que haya visitado. 
+
+
+
+
+
+Ejercicio 4
+- Contar las páginas visitadas por un usuario durante su sesión.

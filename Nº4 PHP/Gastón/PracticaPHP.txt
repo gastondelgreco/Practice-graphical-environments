@@ -1,5 +1,5 @@
 Practica php: variables, tipos, operadores, expresiones, estructuras de control
-PHP: arrays, funciones
+PHP: arrays, funciones.
 
 Ejercicio 1:
 En el siguiente código identificar:
