@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial Practica 1</title>
+    <link rel="STYLESHEET" type="text/css" href="estilos.css">
+</head>
+<body>
+    <h1>Parcial Practica</h1>
+    <a href="https://www.google.com">Clicka aqui</a>
+    <br><br>
+    <form align="right" action="procesar.php" method="post">
+        <label for="name">Nombre: </label> 
+        <input type="text" name="name" required><br>
+        <label for="email">Mail:</label>
+        <input type="email" name="email" required><br>
+        <label for="product">Nombre del producto: </label>
+        <input type="text" name="product" required><br>
+        <label for="month">Mes del año:</label>
+        <select name="month" required>
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+        </select><br>
+        <label for="quantity">Cantidad: </label>
+        <input type="number" name="quantity" required><br>
+        <label for="Terminos">Terminos y Condiciones</label>
+        <input type="checkbox" name="Terminos" required><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
