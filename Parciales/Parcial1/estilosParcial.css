@@ -1,0 +1,26 @@
+body{
+    background-color: gray;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 350px;
+}
+
+h1{
+    color: red;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+a{
+    color: blue;
+    text-align: center;
+}
+
+a:hover{
+    color:yellow;
+}
+
+form{
+    text-align: right;
+}

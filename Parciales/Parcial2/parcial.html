@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: brown">parcialEG</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-10 border" style="background-color: red">
+            <p>MI CV</p>
+            <div class="imagenes" align="right">
+                <a href="https://www.facebook.com/?locale=es_LA">
+                    <img src="https://img.freepik.com/psd-gratis/cuadrado-3d-logotipo-facebook_125540-1565.jpg?w=360" alt="facebook" width="100" height="100">
+                </a>
+                <a href="https://x.com/?lang=es">
+                    <img src="https://pbs.twimg.com/profile_images/1683500894644498435/bwnq-s8f_400x400.jpg" alt="x" class="img-fluid" width="100" height="100">
+                </a>
+                <a href="https://ar.linkedin.com/">
+                    <img src="https://img.freepik.com/fotos-premium/icono-3d-aplicacion-redes-sociales_1289061-1062.jpg" alt="linkedin" width="100" height="100">
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-6 border" style="background-color: purple">
+                    <p>Juan Nicolas Perez</p>
+                    <div class="row">
+                        <div class="col-12 py-5" style="background-color: lightblue">
+                            <p>Datos de contacto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 border" style="background-color: white">
+                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2022/06/05/07/04/person-7243410_1280.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 border py-5" style="background-color: aqua">
+                    <p>Contacto</p>
+                    <form action="validaForm.php" mehotd="post">
+                        <div class="nombre">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="nname" required>
+                        </div>
+                        <div class="email">
+                            <label for="correoE">Email:</label>
+                            <input type="text" id="correroE" name="correoE" required>
+                        </div>
+                        <div class="comentario">
+                            <label for="comment">Comentario:</label>
+                            <input type="text" id="comment" name="comment" required>
+                        </div>
+                        <div class="boton">
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border" style="background-color: gray">
+            <p>Espacio para banner color verde</p>
+        </div>
+    </div>
+    <!--SCRIPS DE BOOSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
